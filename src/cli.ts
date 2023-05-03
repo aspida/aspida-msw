@@ -3,6 +3,7 @@ import getConfig from './getConfig'
 import write from './writeRouteFile'
 import watch from './watchInputDir'
 import build from './buildTemplate'
+import { version } from '../package.json'
 
 export const run = (args: string[]) => {
   const argv = minimist(args, {
@@ -12,7 +13,7 @@ export const run = (args: string[]) => {
 
   // eslint-disable-next-line no-unused-expressions
   argv.version !== undefined
-    ? console.log(`v${require('../package.json').version}`)
+    ? console.log(`v${version}`)
     : argv.watch !== undefined
     ? getConfig(argv.config).forEach(config => {
         write(build(config))

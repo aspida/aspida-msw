@@ -11,6 +11,7 @@
     "sourceMap": true,
     "strict": true,
     "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
     "target": "es5"
   },
   "include": ["src/**/*"]
